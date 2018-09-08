@@ -1,28 +1,34 @@
 {#if realm === 'home'}
   <h1 class="sr-only">Compose status</h1>
 {/if}
-<div class="{computedClassName} {hideAndFadeIn}">
-  <ComposeAuthor />
-  {#if contentWarningShown}
-    <div class="compose-content-warning-wrapper"
-         transition:slide="{duration: 333}">
-      <ComposeContentWarning {realm} {contentWarning} />
-    </div>
-  {/if}
-  <ComposeInput {realm} {text} {autoFocus} on:postAction="doPostStatus()" />
-  <ComposeLengthGauge {length} {overLimit} />
-  <ComposeToolbar {realm} {postPrivacy} {media} {contentWarningShown} {text} />
-  <ComposeLengthIndicator {length} {overLimit} />
-  <ComposeMedia {realm} {media} />
+<div class="compose-box-container">
+  <div class="{computedClassName} {hideAndFadeIn}">
+    <ComposeAuthor />
+    {#if contentWarningShown}
+      <div class="compose-content-warning-wrapper"
+          transition:slide="{duration: 333}">
+        <ComposeContentWarning {realm} {contentWarning} />
+      </div>
+    {/if}
+    <ComposeInput {realm} {text} {autoFocus} on:postAction="doPostStatus()" />
+    <ComposeLengthGauge {length} {overLimit} />
+    <ComposeToolbar {realm} {postPrivacy} {media} {contentWarningShown} {text} />
+    <ComposeLengthIndicator {length} {overLimit} />
+    <ComposeMedia {realm} {media} />
+  </div>
+  <div class="compose-box-button-sentinel {hideAndFadeIn}" ref:sentinel></div>
+  <div class="compose-box-button-wrapper {realm === 'home' ? 'compose-button-sticky' : ''} {hideAndFadeIn}" >
+  <ComposeButton {length} {overLimit} {sticky} on:click="onClickPostButton()" />
+  </div>
 </div>
-<div class="compose-box-button-sentinel {hideAndFadeIn}" ref:sentinel></div>
-<div class="compose-box-button-wrapper {realm === 'home' ? 'compose-button-sticky' : ''} {hideAndFadeIn}" >
- <ComposeButton {length} {overLimit} {sticky} on:click="onClickPostButton()" />
-</div>
-{#if !hideBottomBorder}
-  <div class="compose-box-border-bottom {hideAndFadeIn}"></div>
-{/if}
+
 <style>
+  .compose-box-container {
+    margin-bottom: 16px;
+    background-color: var(--main-bg);
+    box-shadow: 0px 0px 12px rgba(10,10,10, 0.15);
+  }
+
   .compose-box {
     border-radius: 4px;
     padding: 20px 20px 0 20px;
@@ -51,12 +57,6 @@
 
   .compose-box-fade-in {
     transition: opacity 0.2s linear; /* main page reveal */
-  }
-
-  .compose-box-border-bottom {
-    height: 1px;
-    background: var(--main-border);
-    width: 100%;
   }
 
   .compose-box-button-wrapper {

@@ -20,7 +20,6 @@
       <use xlink:href={svg} />
     </svg>
     {/if}
-    <span class="nav-link-label">{label}</span>
   </div>
   <div class="nav-indicator"
        nav-indicator-key={name}
@@ -83,23 +82,16 @@
     background: var(--nav-a-selected-bg);
   }
 
-  .main-nav-link.selected:hover {
-    background: var(--nav-a-selected-bg-hover);
-  }
-
   .nav-indicator {
     width: 100%;
-    height: 1px;
+    height: 2px;
+    border-radius: 2px;
     background: var(--nav-a-border);
     transform-origin: left;
   }
 
   .nav-indicator.animate {
     transition: transform 333ms ease-in-out;
-  }
-
-  .main-nav-link:hover .nav-indicator {
-    background: var(--nav-a-border-hover);
   }
 
   .main-nav-link.selected .nav-indicator {
@@ -123,6 +115,11 @@
   }
 
   .nav-link-svg {
+    display: inline-block;
+    fill: var(--button-faded);
+  }
+
+  .main-nav-link.selected .nav-link-svg {
     display: inline-block;
     fill: var(--nav-svg-fill);
   }

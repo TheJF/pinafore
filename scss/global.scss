@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  @import url('https://fonts.googleapis.com/css?family=Mukta');
+  font-family: 'Mukta', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   color: var(--body-text-color);
@@ -13,7 +14,7 @@ body {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  top: 42px;
+  top: 32px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -32,8 +33,8 @@ main {
   padding: 0;
   box-sizing: border-box;
   margin: 30px auto 15px;
-  background: var(--main-bg);
-  border: 1px solid var(--main-border);
+  background: var(--body-bg);
+  border: 0px solid var(--main-border);
   border-radius: 1px;
   min-height: 70vh;
   @media (max-width: 767px) {
@@ -47,7 +48,7 @@ footer {
   box-sizing: border-box;
   margin: 15px auto;
   border-radius: 1px;
-  background: var(--main-bg);
+  background: var(--body-bg);
   font-size: 0.9em;
   padding: 20px;
   border: 1px solid var(--main-border);

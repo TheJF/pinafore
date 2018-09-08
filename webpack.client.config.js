@@ -28,7 +28,10 @@ module.exports = {
             emitCss: !isDev,
             cascade: false,
             store: true,
-            hotReload: isDev
+            hotReload: true,
+            hotOptions: {
+              noPreserveState: true
+            }
           }
         }
       },

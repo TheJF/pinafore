@@ -13,6 +13,7 @@
   --button-border: #{darken($border-color, 20%)};
   --button-bg-active: #{darken($main-bg-color, 25%)};
   --button-bg-hover: #{darken($main-bg-color, 5%)};
+  --button-faded: #{lighten($main-text-color, 50%)};
 
   --input-border: #{$border-color};
   --anchor-text: #{$anchor-color};
@@ -29,7 +30,7 @@
   --nav-border: #{darken($main-theme-color, 10%)};
   --nav-a-border: #{$main-theme-color};
   --nav-a-selected-border: #{$secondary-text-color};
-  --nav-a-selected-bg: #{lighten($main-theme-color, 10%)};
+  --nav-a-selected-bg: #{$main-theme-color};
   --nav-svg-fill: #{$secondary-text-color};
   --nav-text-color: #{$secondary-text-color};
 
@@ -40,12 +41,12 @@
   --nav-svg-fill-hover: #{$secondary-text-color};
   --nav-text-color-hover: #{$secondary-text-color};
 
-  --action-button-fill-color: #{lighten($main-theme-color, 18%)};
-  --action-button-fill-color-hover: #{lighten($main-theme-color, 22%)};
-  --action-button-fill-color-active: #{lighten($main-theme-color, 5%)};
-  --action-button-fill-color-pressed: #{darken($main-theme-color, 7%)};
-  --action-button-fill-color-pressed-hover: #{darken($main-theme-color, 2%)};
-  --action-button-fill-color-pressed-active: #{darken($main-theme-color, 15%)};
+  --action-button-fill-color: #{lighten($secondary-text-color, 18%)};
+  --action-button-fill-color-hover: #{lighten($secondary-text-color, 22%)};
+  --action-button-fill-color-active: #{lighten($secondary-text-color, 5%)};
+  --action-button-fill-color-pressed: #{darken($secondary-text-color, 7%)};
+  --action-button-fill-color-pressed-hover: #{darken($secondary-text-color, 2%)};
+  --action-button-fill-color-pressed-active: #{darken($secondary-text-color, 15%)};
 
   --action-button-deemphasized-fill-color: #{$deemphasized-color};
   --action-button-deemphasized-fill-color-hover: #{lighten($deemphasized-color, 22%)};
@@ -55,8 +56,8 @@
   --action-button-deemphasized-fill-color-pressed-active: #{darken($deemphasized-color, 15%)};
 
   --settings-list-item-bg: #{$main-bg-color};
-  --settings-list-item-text: #{$main-theme-color};
-  --settings-list-item-text-hover: #{$main-theme-color};
+  --settings-list-item-text: #{$main-text-color};
+  --settings-list-item-text-hover: #{$main-text-color};
   --settings-list-item-border: #{$border-color};
   --settings-list-item-bg-active: #{darken($main-bg-color, 10%)};
   --settings-list-item-bg-hover: #{darken($main-bg-color, 2%)};
